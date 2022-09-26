@@ -3,10 +3,12 @@ on:
 jobs:
   job1:
     steps:
-      - name: Build Storybook distribution files
+      - name: Write file
         run: |
           echo "Hello World" >> a.txt
   job2:
     needs: job1
     steps:
-      echo "$(<a.txt )"
+      - name: Read file
+        run: |
+          echo "$(<a.txt )"
