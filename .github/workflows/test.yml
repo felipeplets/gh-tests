@@ -2,12 +2,14 @@ on:
   workflow_dispatch:
 jobs:
   job1:
+    runs-on: ubuntu-latest
     steps:
       - name: Write file
         run: |
           echo "Hello World" >> a.txt
   job2:
     needs: job1
+    runs-on: ubuntu-latest
     steps:
       - name: Read file
         run: |
