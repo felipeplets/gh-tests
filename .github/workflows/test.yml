@@ -1,0 +1,12 @@
+on:
+  workflow_dispatch:
+jobs:
+  job1:
+    steps:
+      - name: Build Storybook distribution files
+        run: |
+          echo "Hello World" >> a.txt
+  job2:
+    needs: job1
+    steps:
+      echo "$(<a.txt )"
